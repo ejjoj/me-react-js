@@ -1,0 +1,146 @@
+.header {
+  display: flex;
+  align-items: center;
+
+  &-logo {
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    transition: .3s;
+    margin: 16px 0;
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 0;
+      background-color: #333;
+      transition: .3s;
+    }
+
+    &:after {
+      top: 100%;
+      height: 1px;
+      width: 0;
+    }
+
+    &:hover {
+      text-decoration: none;
+      color: #111;
+
+      &:before {
+        height: 100%;
+      }
+
+      &:after {
+        width: 70%;
+      }
+    }
+
+    &__title {
+      font-weight: 700;
+
+
+      &-sub {
+        font-weight: 600;
+      }
+    }
+  }
+
+  &-nav {
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+
+    &__item {
+      font-size: 1.4rem;
+      padding: 0 1.6rem;
+    }
+
+    &__link {
+      color: #333;
+      position: relative;
+      padding: 1rem;
+
+      &:before,
+      &:after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        height: 1px;
+        width: 0;
+        background-color: #333;
+        transition: .3s;
+      }
+
+      &:after {
+        left: 100%;
+        height: 0;
+        width: 1px;
+      }
+
+      &:hover {
+        color: #333;
+        text-decoration: none;
+
+        &:before {
+          width: 100%;
+        }
+
+        &:after {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  &-socials {
+    margin-block-end: 0;
+    padding-inline-start: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    &__item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 4em;
+      position: relative;
+
+      &:after {
+        position: absolute;
+        content: '';
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 1px;
+        background-color: #333;
+        transition: .3s;
+      }
+
+      &:hover {
+        &:after {
+          width: 50%
+        }
+      }
+    }
+
+    &__link {
+      color: #333;
+
+      &:hover {
+        color: #333;
+        text-decoration: none;
+      }
+    }
+  }
+}
