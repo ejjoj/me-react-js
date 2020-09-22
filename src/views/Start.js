@@ -15,7 +15,16 @@ class Start extends Component {
       { id: 4, name: "SASS/SCSS," },
       { id: 5, name: "MySQL." },
     ],
+    todaysDate: new Date(),
   };
+
+  calcMyAge() {
+    const { todaysDate } = this.state;
+    const myBirthDay = new Date(1999, 2, 17, 12, 30, 0);
+    const diff = (todaysDate - myBirthDay) / 1000 / 60 / 60 / 24 / 365;
+
+    return Math.floor(diff);
+  }
 
   render() {
     const technologies = this.state.technologies.map((technology) => (
@@ -28,19 +37,24 @@ class Start extends Component {
           <img className="start-photo" src={me} alt="Bartosz Szymański" />
         </div>
         <div className="col-lg-6 start-text">
-          <strong>Kim jestem?</strong>
+          <h3 className="start-text__heading">Kim jestem?</h3>
           <p className="start-desc">
-            Nazywam się Bartosz Szymański. Mieszkam w Krakowie. Mam 21 lat,
-            jestem <span>Junior Fullstack Developerem</span>. Profesjonalnie
-            pracuję w technologiach takich jak:
+            Nazywam się Bartosz Szymański. Mieszkam w Krakowie. Mam{" "}
+            {this.calcMyAge()} lat, jestem{" "}
+            <span>Junior Fullstack Developerem</span>. Profesjonalnie pracuję w
+            technologiach takich jak:
           </p>
           <ul className="start-tech">{technologies}</ul>
           <p className="start-desc">
             Używam ich w silnikach takich jak Wordpress i PrestaShop. Poza pracą
-            zajmuję się rozwijaniem swojej pasji, a także studiuję zaocznie w
+            zajmuję się rozwijaniem swojej pasji - programowaniem, a także
+            studiuję zaocznie w
             <strong> Wyższej Szkole Zarządzania i Bankowości w Krakowie</strong>
             .
           </p>
+          <div className="row start-text__container">
+            <button className="start-text__button">Zjedź niżej!</button>
+          </div>
         </div>
       </div>
     );

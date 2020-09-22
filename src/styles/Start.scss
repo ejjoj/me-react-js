@@ -21,6 +21,58 @@
   &-text {
     padding-top: 1.6rem;
     font-size: 2em;
+
+    &__container {
+      margin: 3.2rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__button {
+      background-color: transparent;
+      color: #333;
+      border: none;
+      font-size: 1.6em;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+
+      &:before,
+      &:after {
+        position: absolute;
+        content: '';
+        top: 50%;
+        transform: translate(-100%, -50%);
+        left: 0;
+        background-color: #000;
+        width: 100%;
+        height: 1rem;
+        transition: .3s;
+        border-radius: 2rem;
+      }
+
+      &:after {
+        top: 0;
+        left: 50%;
+        height: 100%;
+        width: 1rem;
+        transform: translate(-50%, -100%);
+        transition-delay: .3s;
+        transition-duration: .3s;
+      }
+
+
+      &:hover {
+        &:before {
+          transform: translate(100%, -50%);
+        }
+
+        &:after {
+          transform: translate(-50%, 100%);
+        }
+      }
+    }
   }
 
   &-tech {
@@ -28,6 +80,7 @@
     padding-inline-start: 0;
     margin-block-end: 0;
     display: flex;
+    margin-bottom: 1rem;
 
     &__item {
       padding: 0 .5rem;
